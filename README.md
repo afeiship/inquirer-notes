@@ -1,5 +1,5 @@
 # inquirer-notes
-> Inquirer notes
+> Inquirer notes.
 
 
 ## resources
