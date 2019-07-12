@@ -1,19 +1,26 @@
 var inquirer = require('inquirer');
 var prompt = inquirer.createPromptModule();
-var ui = new inquirer.ui.BottomBar();
+var Listr = require('listr');
 
-// pipe a Stream to the log zone
-outputStream.pipe(ui.log);
+var tasks = new Listr([
+  {
+    title: 'Success',
+    task: () => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          console.log('test');
+          resolve();
+        }, 4000);
+      });
+    }
+  }
+]);
 
-// Or simply write output
-ui.log.write('something just happened.');
-ui.log.write('Almost over, standby!');
+tasks.run().catch((err) => {
+  console.error(err);
+});
 
-// During processing, update the bottom bar content to display a loader
-// or output a progress bar, etc
-ui.updateBottomBar('new bottom bar content');
-
-
+/*
 prompt([
   {
     type: 'list',
@@ -32,8 +39,10 @@ prompt([
   },
   {
     type: 'confirm',
-    name:'cm1',
+    name: 'cm1'
   }
 ]).then((res) => {
   console.log('res:->', res);
 });
+
+*/
