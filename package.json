@@ -1,0 +1,18 @@
+{
+  "name": "inquirer-notes",
+  "version": "1.0.0",
+  "description": "Inquirer notes",
+  "homepage": "https://github.com/afeiship/inquirer-notes",
+  "author": {
+    "name": "afei",
+    "email": "1290657123@qq.com"
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
+  "dependencies": {
+    "inquirer": "^6.5.0"
+  }
+}
